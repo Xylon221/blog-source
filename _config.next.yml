@@ -1,0 +1,215 @@
+# ===============================================================
+# NexT Theme Configuration — 且听风吟
+# ===============================================================
+
+# Scheme: Gemini (双栏，优雅大方)
+scheme: Gemini
+
+# Dark Mode
+darkmode: false
+
+# Custom files
+custom_file_path:
+  style: source/_data/styles.styl
+
+# Favicon
+favicon:
+  small: /images/favicon-16x16-next.png
+  medium: /images/favicon-32x32-next.png
+  apple_touch_icon: /images/apple-touch-icon-next.png
+
+# Menu
+menu:
+  home: / || fa fa-home
+  posts: /posts/ || fa fa-feather
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  archives: /archives/ || fa fa-archive
+
+menu_settings:
+  icons: true
+  badges: false
+
+# ---------------------------------------------------------------
+# Sidebar
+# ---------------------------------------------------------------
+sidebar:
+  position: right
+  width_expanded: 260
+  width_dual_column: 220
+  display: post
+  padding: 18
+  offset: 12
+
+avatar:
+  url: #/images/avatar.jpg
+  rounded: false
+  rotated: false
+
+site_state: true
+
+# Social Links
+social:
+  GitHub: https://github.com/ || fab fa-github
+
+social_icons:
+  enable: true
+  icons_only: false
+  transition: false
+
+# Table of Contents
+toc:
+  enable: true
+  number: false
+  wrap: false
+  expand_all: false
+  max_depth: 4
+
+# ---------------------------------------------------------------
+# Footer
+# ---------------------------------------------------------------
+footer:
+  since: 2026
+  icon:
+    name: fa fa-feather
+    animated: false
+    color: "#999590"
+  copyright:
+  powered:
+    enable: true
+
+# ---------------------------------------------------------------
+# Post Settings
+# ---------------------------------------------------------------
+excerpt_description: true
+read_more_btn: true
+
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at:
+    enable: false
+    another_day: true
+  categories: true
+
+tag_icon: true
+
+reward_settings:
+  enable: false
+
+# ---------------------------------------------------------------
+# Font Settings — matching original design
+# ---------------------------------------------------------------
+font:
+  enable: true
+  host: https://fonts.googleapis.com
+  global:
+    external: true
+    family: Noto Serif SC
+    size: 1.0625
+  title:
+    external: true
+    family: Noto Serif SC
+    size: 1.125
+  headings:
+    external: true
+    family: Noto Serif SC
+    size: 1.125
+  posts:
+    external: true
+    family: Noto Serif SC
+  codes:
+    external: true
+    family: JetBrains Mono
+    size: 0.875
+
+# ---------------------------------------------------------------
+# Text & Layout
+# ---------------------------------------------------------------
+text_align:
+  desktop: justify
+  mobile: justify
+
+mobile_layout_economy: false
+
+theme_color:
+  light: "#f7f6f1"
+  dark: "#222"
+
+# ---------------------------------------------------------------
+# Code Block
+# ---------------------------------------------------------------
+codeblock:
+  theme:
+    light: default
+    dark: stackoverflow-dark
+  copy_button:
+    enable: true
+    style: flat
+  fold:
+    enable: false
+  language: true
+
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: false
+
+# ---------------------------------------------------------------
+# Misc
+# ---------------------------------------------------------------
+# Auto-spacing for CJK characters
+pangu: true
+
+# Image zoom
+mediumzoom: false
+fancybox: true
+
+# Lazy load images
+lazyload: true
+
+# Creative Commons
+creative_commons:
+  license: by-nc-sa
+  size: small
+  sidebar: false
+  post: true
+  language: deed.zh
+
+# ---------------------------------------------------------------
+# Animation
+# ---------------------------------------------------------------
+motion:
+  enable: true
+  async: false
+  duration: 200
+  transition:
+    menu_item: fadeInDown
+    post_block: fadeIn
+    post_header: fadeInDown
+    post_body: fadeInDown
+    coll_header: fadeInLeft
+    sidebar: fadeInUp
+
+# ---------------------------------------------------------------
+# Local Search
+# ---------------------------------------------------------------
+local_search:
+  enable: false
+
+# ---------------------------------------------------------------
+# Math — MathJax
+# ---------------------------------------------------------------
+math:
+  every_page: false
+  mathjax:
+    enable: true
+
+# ---------------------------------------------------------------
+# Comments — 预留给后面接入
+# ---------------------------------------------------------------
+comments:
+  style: tabs
+  active:
+  storage: true
+  lazyload: false
