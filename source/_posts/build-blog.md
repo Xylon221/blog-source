@@ -1,5 +1,6 @@
 ---
 title: 用纯 HTML + CSS 搭建个人博客
+description: 这篇博客就是用纯 HTML + CSS 搭建的。没有框架，没有构建工具，没有任何依赖。
 date: 2026-04-28
 tags: [技术]
 ---

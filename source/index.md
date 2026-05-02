@@ -1,6 +1,6 @@
 ---
-title: 且听风吟
-subtitle: 静けさの中で、言葉を見つける
+title: 首页
+subtitle: ''
 layout: page
 comments: false
 ---
@@ -8,14 +8,14 @@ comments: false
 <div class="homepage">
   <div class="hp-hero">
     <p class="hp-tagline">To see a world in a grain of sand</p>
-    <h1 class="hp-title">且听风吟</h1>
+    <h1 class="hp-title">只想睡大觉</h1>
     <div class="hp-divider">
       <span class="hp-divider-dot"></span>
     </div>
-    <p class="hp-subtitle">静けさの中で、言葉を見つける</p>
+    <p class="hp-subtitle"></p>
     <p class="hp-desc">
-      这里是一个安静写字的地方<br>
-      记录技术笔记、生活片段，以及偶尔的胡思乱想
+      一个记录技术笔记与生活碎片的博客<br>
+      偶尔也会胡思乱想
     </p>
   </div>
 

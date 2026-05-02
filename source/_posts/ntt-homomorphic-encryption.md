@@ -1,5 +1,6 @@
 ---
 title: 同态加密中的 NTT——从多项式乘法到数论变换
+description: 如果你看过全同态加密的实现（BFV、BGV、CKKS），一定会反复遇到一个词：NTT（Number Theoretic Transform，数论变换）。它是 FHE 性能的核心，没有它，同态加密的多项式运算会慢到不可用。
 date: 2026-04-30
 tags: [技术]
 mathjax: true

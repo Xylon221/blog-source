@@ -1,10 +1,12 @@
 /* ========================================
-   且听风吟 — 极简白底
+   只想睡大觉 — typography 极简风格
    ======================================== */
 
-/* === 全局纯白 === */
+/* === 全局 === */
 body {
   background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .main-inner {
@@ -16,7 +18,12 @@ body {
   background: #fff;
 }
 
-/* 顶部导航更轻盈 */
+::selection {
+  background: #2e405b;
+  color: #fff;
+}
+
+/* === 顶部导航 === */
 .site-nav {
   border-bottom: none;
 }
@@ -25,18 +32,25 @@ body {
   font-size: 0.85rem;
   letter-spacing: 2px;
   font-weight: 400;
-  color: #888;
-  transition: color 0.3s;
+  color: #999;
+  transition: color 0.3s, background-color 0.3s;
+  border-bottom: solid transparent 2px;
+  padding: 0;
 }
 
 .menu .menu-item a:hover {
-  color: #222;
+  color: #fff;
+  background-color: #2e405b;
+}
+
+.menu .menu-item-active a {
+  border-bottom: solid #2e405b 3px;
   background: none;
 }
 
 .site-title {
-  font-weight: 400;
-  letter-spacing: 4px;
+  font-weight: 700;
+  letter-spacing: 6px;
 }
 
 .site-subtitle {
@@ -61,7 +75,6 @@ body {
 }
 
 .hp-tagline {
-  font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
   font-style: italic;
   font-size: 0.95rem;
   color: #bbb;
@@ -73,7 +86,7 @@ body {
   font-size: 2.8rem;
   font-weight: 300;
   letter-spacing: 12px;
-  color: #222;
+  color: #2e405b;
   margin: 0 0 28px;
 }
 
@@ -127,11 +140,13 @@ body {
   gap: 10px;
   text-decoration: none;
   color: #888;
-  transition: color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
+  border-bottom: solid transparent 2px;
 }
 
 .hp-link-item:hover {
-  color: #222;
+  color: #fff;
+  background-color: #2e405b;
 }
 
 .hp-link-icon {
@@ -149,7 +164,6 @@ body {
 }
 
 .hp-footer-quote p {
-  font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
   font-style: italic;
   font-size: 0.82rem;
   color: #ccc;
@@ -166,16 +180,10 @@ body {
 }
 
 .hp-footer-quote p:last-child {
-  font-family: "Noto Serif SC", serif;
   font-style: normal;
   font-size: 0.75rem;
   color: #ccc;
   letter-spacing: 3px;
-}
-
-/* === 隐藏首页不需要的元素 === */
-.homepage + * {
-  /* 首页隐藏侧边栏和页脚的多余元素 */
 }
 
 /* === 文章正文排版 === */
@@ -186,21 +194,17 @@ body {
 }
 
 .post-body p {
-  text-indent: 2em;
   margin-bottom: 1.5rem;
-}
-
-.post-body p:first-of-type {
-  text-indent: 0;
 }
 
 .post-body h2 {
   font-size: 1.15rem;
-  font-weight: 500;
+  font-weight: 600;
   margin: 48px 0 18px;
   padding-left: 12px;
-  border-left: 2px solid #e0e0e0;
+  border-left: 2px solid #2e405b;
   letter-spacing: 1px;
+  color: #2e405b;
 }
 
 .post-body h3 {
@@ -208,6 +212,7 @@ body {
   font-weight: 500;
   margin: 36px 0 14px;
   letter-spacing: 0.5px;
+  color: #2e405b;
 }
 
 .post-body blockquote {
@@ -216,17 +221,12 @@ body {
   margin: 32px 0;
   color: #888;
   font-style: italic;
-  text-indent: 0;
-}
-
-.post-body blockquote p {
-  text-indent: 0;
 }
 
 .post-body pre {
   background: #f5f5f5;
   color: #333;
-  padding: 22px 24px;
+  padding: 18px 20px;
   border-radius: 4px;
   font-size: 0.82rem;
   line-height: 1.8;
@@ -247,30 +247,38 @@ body {
   border-radius: 0;
 }
 
-.post-body p code {
-  text-indent: 0;
-}
-
 .post-body a {
-  color: #555;
+  color: #2e405b;
   text-decoration: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: solid #2e405b 2px;
   padding-bottom: 1px;
-  transition: border-color 0.2s, color 0.2s;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 .post-body a:hover {
-  color: #222;
-  border-bottom-color: #222;
+  color: #fff;
+  background-color: #2e405b;
+  border-bottom: solid transparent 2px;
 }
 
-.post-body ul, .post-body ol {
-  text-indent: 0;
+.post-body hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ddd, transparent);
+  margin: 48px 0;
 }
 
-.post-body li {
-  text-indent: 0;
-  margin-bottom: 8px;
+/* === 文章页标题 === */
+.post-header .post-title {
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  color: #2e405b;
+}
+
+.post-meta {
+  color: #999;
+  font-size: 14px;
 }
 
 /* === 标签按钮 === */
@@ -285,59 +293,139 @@ body {
 }
 
 .tag-cloud a:hover {
-  color: #222;
-  border-color: #222;
-  background: none;
+  color: #fff;
+  background: #2e405b;
+  border-color: #2e405b;
 }
 
 /* === 文章列表 /posts === */
 .posts-expand .post {
-  border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 28px;
+  border-bottom: none;
+  padding: 36px 0;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.posts-expand .post + .post::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #e8e8e8;
+  position: absolute;
+  top: 0;
 }
 
 .posts-expand .post-title {
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 2px;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.posts-expand .post-title a {
+  color: #2e405b;
+  border-bottom: none;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.posts-expand .post-title a:hover {
+  color: #fff;
+  background-color: #2e405b;
 }
 
 .posts-expand .post-meta {
-  color: #bbb;
-  font-size: 0.8rem;
+  color: #999;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.posts-expand .post-meta time {
+  border-bottom: none;
+}
+
+.posts-expand .post-body {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: #666;
+  margin-top: 14px;
+}
+
+.post-button {
+  margin-top: 18px;
 }
 
 .post-button .btn {
-  border: 1px solid #ddd;
-  color: #888;
+  border: 1px solid #e0e0e0;
+  color: #999;
   border-radius: 3px;
-  font-size: 0.78rem;
-  letter-spacing: 1px;
-  transition: all 0.3s;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding: 6px 20px;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
 }
 
 .post-button .btn:hover {
-  color: #222;
-  border-color: #222;
-  background: none;
+  color: #fff;
+  background-color: #2e405b;
+  border-color: #2e405b;
 }
 
 /* === 分页器 === */
 .pagination .page-number.current {
-  background: #222;
+  background: #2e405b;
   border-radius: 0;
 }
 
-/* === 侧边栏更简洁 === */
+/* === TOC 目录 === */
+.post-toc {
+  background: #fafaf9;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 36px;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.post-toc .nav .nav-item .nav-link {
+  color: #666;
+  border-bottom: none;
+  padding: 0;
+}
+
+.post-toc .nav .nav-item .nav-link:hover {
+  color: #2e405b;
+  background: transparent;
+}
+
+.post-toc .nav .active .nav-link {
+  color: #2e405b;
+  font-weight: 600;
+}
+
+/* === 侧边栏 === */
 .sidebar-inner {
   background: #fff;
 }
 
 .sidebar-nav .sidebar-nav-active {
-  color: #222;
+  color: #2e405b;
+}
+
+.site-overview-title {
+  font-weight: 600;
+  color: #2e405b;
+}
+
+/* === Gitalk === */
+.gt-container .gt-header-textarea {
+  background: #fff !important;
 }
 
 /* === 响应式 === */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .hp-title {
     font-size: 2rem;
     letter-spacing: 8px;
@@ -347,15 +435,24 @@ body {
     gap: 28px;
   }
 
+  .posts-expand .post {
+    padding: 24px 0;
+  }
+
+  .posts-expand .post-title {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
   .post-body {
     font-size: 0.95rem;
   }
 
-  .post-body p {
-    text-indent: 1.5em;
-  }
-
   .post-body h2 {
     font-size: 1.08rem;
+  }
+
+  .post-header .post-title {
+    font-size: 1.3rem;
   }
 }
