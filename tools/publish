@@ -1,0 +1,32 @@
+#!/bin/bash
+# ==============================================
+# 一键发布脚本 — 导入图片 + 部署博客
+# ==============================================
+#
+# 本地写博客工作流:
+#   1. 写 markdown, 图片引用写为 ![](/images/foo.png)
+#   2. scp markdown 到服务器: scp post.md server:source/_posts/
+#   3. scp 图片到服务器:        scp img.png server:source/images/
+#   4. 在服务器上运行:          ./publish.sh
+#
+# 或者直接在服务器上导入图片:
+#   ./scripts/import-image ~/some-image.png
+# ==============================================
+
+set -e
+cd /home/ubuntu/workspace/blog-source
+
+echo "=== 预处理 (自动生成 front-matter) ==="
+node scripts/preprocess.js
+
+echo ""
+echo "=== 生成静态页面 ==="
+node node_modules/hexo/bin/hexo generate
+
+echo ""
+echo "=== 部署到 GitHub Pages ==="
+node node_modules/hexo/bin/hexo deploy
+
+echo ""
+echo "=== 完成 ==="
+echo "网站: https://xylon221.github.io"

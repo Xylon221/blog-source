@@ -1,22 +1,18 @@
 # ===============================================================
-# NexT Theme Configuration — 且听风吟
+# NexT Theme Configuration — 只想睡大觉
+# 风格: 接近 typography 极简风
 # ===============================================================
 
-# Scheme: Gemini (双栏，优雅大方)
+# Scheme: Gemini (双栏)
 scheme: Gemini
 
 # Dark Mode
 darkmode: false
 
-# Custom files
-custom_file_path:
-  style: source/_data/styles.styl
-
 # Favicon
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
+  small: /images/favicon.png
+  medium: /images/favicon.png
 
 # Menu
 menu:
@@ -31,12 +27,12 @@ menu_settings:
   badges: false
 
 # ---------------------------------------------------------------
-# Sidebar
+# Sidebar — 左侧，typography 风格
 # ---------------------------------------------------------------
 sidebar:
-  position: right
-  width_expanded: 260
-  width_dual_column: 220
+  position: left
+  width_expanded: 240
+  width_dual_column: 200
   display: post
   padding: 18
   offset: 12
@@ -46,11 +42,11 @@ avatar:
   rounded: false
   rotated: false
 
-site_state: true
+site_state: false
 
 # Social Links
 social:
-  GitHub: https://github.com/ || fab fa-github
+  GitHub: https://github.com/Xylon221 || fab fa-github
 
 social_icons:
   enable: true
@@ -74,9 +70,6 @@ footer:
     name: fa fa-feather
     animated: false
     color: "#999590"
-  copyright:
-  powered:
-    enable: true
 
 # ---------------------------------------------------------------
 # Post Settings
@@ -98,7 +91,7 @@ reward_settings:
   enable: false
 
 # ---------------------------------------------------------------
-# Font Settings — matching original design
+# Font Settings — 中文字体优先
 # ---------------------------------------------------------------
 font:
   enable: true
@@ -133,11 +126,11 @@ text_align:
 mobile_layout_economy: false
 
 theme_color:
-  light: "#f7f6f1"
+  light: "#fff"
   dark: "#222"
 
 # ---------------------------------------------------------------
-# Code Block
+# Code Block — 简洁
 # ---------------------------------------------------------------
 codeblock:
   theme:
@@ -158,17 +151,13 @@ back2top:
 # ---------------------------------------------------------------
 # Misc
 # ---------------------------------------------------------------
-# Auto-spacing for CJK characters
 pangu: true
 
-# Image zoom
 mediumzoom: false
 fancybox: true
 
-# Lazy load images
 lazyload: true
 
-# Creative Commons
 creative_commons:
   license: by-nc-sa
   size: small
@@ -177,19 +166,19 @@ creative_commons:
   language: deed.zh
 
 # ---------------------------------------------------------------
-# Animation
+# Animation — 快速淡入
 # ---------------------------------------------------------------
 motion:
   enable: true
-  async: false
-  duration: 200
+  async: true
+  duration: 80
   transition:
-    menu_item: fadeInDown
+    menu_item: fadeIn
     post_block: fadeIn
-    post_header: fadeInDown
-    post_body: fadeInDown
-    coll_header: fadeInLeft
-    sidebar: fadeInUp
+    post_header: fadeIn
+    post_body: fadeIn
+    coll_header: fadeIn
+    sidebar: fadeIn
 
 # ---------------------------------------------------------------
 # Local Search
@@ -206,10 +195,27 @@ math:
     enable: true
 
 # ---------------------------------------------------------------
-# Comments — 预留给后面接入
+# Comments — Gitalk
 # ---------------------------------------------------------------
 comments:
   style: tabs
-  active:
+  active: gitalk
   storage: true
   lazyload: false
+
+gitalk:
+  enable: true
+  github_id: Xylon221
+  repo: xylon221.github.io
+  client_id: Ov23lim4tiqKfiBn80XF
+  client_secret: 8ff7df6197d0ee163a76fe82065844ceace858f1
+  admin_user: Xylon221
+  distraction_free_mode: true
+  language: zh-CN
+  proxy:
+
+# ---------------------------------------------------------------
+# Custom Files
+# ---------------------------------------------------------------
+custom_file_path:
+  style: source/_data/styles.styl

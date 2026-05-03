@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+cd /home/ubuntu/workspace/blog-source
+node scripts/preprocess.js
+node node_modules/hexo/bin/hexo generate
+node node_modules/hexo/bin/hexo deploy
+echo "Deploy done."

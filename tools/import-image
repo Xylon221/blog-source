@@ -1,0 +1,44 @@
+#!/bin/bash
+# ==============================================
+# 导入图片到指定文章目录
+# 用法: ./tools/import-image <图片路径> <文章slug>
+# 示例: ./tools/import-image ~/screenshot.png ClaudeDesktop-DeepSeekV4
+# 输出: markdown 图片引用标签
+# ==============================================
+
+set -e
+IMAGES_DIR="/home/ubuntu/workspace/blog-source/source/images/posts"
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+  echo "用法: ./tools/import-image <图片路径> <文章slug>"
+  echo "  示例: ./tools/import-image ~/screenshot.png hello-world"
+  echo ""
+  echo "本地写博客工作流:"
+  echo "  1. 写 markdown, 图片引用写为 ![](/images/posts/<slug>/img.png)"
+  echo "  2. scp markdown 到: server:source/_posts/"
+  echo "  3. scp 图片到:      server:source/images/posts/<slug>/"
+  echo "  4. 在服务器上运行:  ./tools/publish"
+  exit 1
+fi
+
+SRC="$1"
+SLUG="$2"
+FILENAME=$(basename "$SRC")
+DEST_DIR="$IMAGES_DIR/$SLUG"
+DEST="$DEST_DIR/$FILENAME"
+
+mkdir -p "$DEST_DIR"
+
+if [ -f "$DEST" ]; then
+  BASENAME="${FILENAME%.*}"
+  EXT="${FILENAME##*.}"
+  TIMESTAMP=$(date +%s)
+  FILENAME="${BASENAME}_${TIMESTAMP}.${EXT}"
+  DEST="$DEST_DIR/$FILENAME"
+fi
+
+cp "$SRC" "$DEST"
+echo "图片已导入: source/images/posts/$SLUG/$FILENAME"
+echo ""
+echo "Markdown 引用:"
+echo "![图片描述](/images/posts/$SLUG/$FILENAME)"

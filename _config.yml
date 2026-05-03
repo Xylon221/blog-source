@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 且听风吟
-subtitle: '静けさの中で、言葉を見つける'
-description: '一个安静写字的地方——记录技术笔记、生活片段，以及偶尔的胡思乱想'
-keywords: 博客,技术,生活,随想
-author: 且听风吟
+title: 只想睡大觉
+subtitle: ''
+description: '一个记录技术笔记与生活碎片的博客'
+keywords: 博客,技术,生活,随想,编程
+author: 只想睡大觉
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
@@ -44,15 +44,22 @@ relative_link: false
 future: true
 syntax_highlighter: highlight.js
 highlight:
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
 prismjs:
+  enable: true
   preprocess: true
   line_number: true
   tab_replace: ''
+
+prism_plugin:
+  mode: preprocess
+  theme: default
+  line_number: true
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -100,7 +107,17 @@ theme: next
 # hexo-admin — 网页端写作
 # 首次访问 /admin 时会提示设置用户名密码
 admin:
-  deployCommand: 'hexo generate'
+  deployCommand: '/home/ubuntu/workspace/blog-source/tools/deploy'
+  username: xylon
+  password_hash: $2a$10$USLhKsH6jHilCLvTeZOqnufUX.Ub/psDIAAas/LwEzLooJaaIXK.i
+  secret: ec5077030507c9afc1716533787b5c70b024b409b19098653e45c3dfa1f3196a
+
+# RSS Feed
+## Docs: https://github.com/hexojs/hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

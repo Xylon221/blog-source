@@ -6,7 +6,7 @@ description: "技术圈变化很快，新框架、新工具层出不穷。但真
 ---
 技术圈变化很快，新框架、新工具层出不穷。但真正拉开差距的，不是追了多少新技术，而是有没有一个可持续的学习节奏。
 
-![upload successful](/images/pasted-4.png)
+![阅读是一种习惯](/images/posts/keep-learning/reading.jpg)
 
 ## 每天一小时
 

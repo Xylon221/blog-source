@@ -1,6 +1,9 @@
 /* ========================================
-   只想睡大觉 — typography 极简风格
+   只想睡大觉 — 极简白底
    ======================================== */
+
+$accent        = #2e405b;
+$accent-hover  = #1a2a3d;
 
 /* === 全局 === */
 body {
@@ -11,7 +14,7 @@ body {
 
 .main-inner {
   background: #fff;
-  padding-top: 0;
+  padding-top: 20px;
 }
 
 .header {
@@ -19,7 +22,7 @@ body {
 }
 
 ::selection {
-  background: #2e405b;
+  background: $accent;
   color: #fff;
 }
 
@@ -33,24 +36,27 @@ body {
   letter-spacing: 2px;
   font-weight: 400;
   color: #999;
-  transition: color 0.3s, background-color 0.3s;
-  border-bottom: solid transparent 2px;
-  padding: 0;
+  transition: color .3s, background-color .3s;
+  padding: 4px 12px;
+  border-radius: 2px;
 }
 
 .menu .menu-item a:hover {
   color: #fff;
-  background-color: #2e405b;
+  background-color: $accent;
 }
 
 .menu .menu-item-active a {
-  border-bottom: solid #2e405b 3px;
+  color: $accent;
   background: none;
+  border-bottom: solid $accent 2px;
+  border-radius: 0;
 }
 
 .site-title {
   font-weight: 700;
-  letter-spacing: 6px;
+  letter-spacing: 5px;
+  color: $accent;
 }
 
 .site-subtitle {
@@ -86,7 +92,7 @@ body {
   font-size: 2.8rem;
   font-weight: 300;
   letter-spacing: 12px;
-  color: #2e405b;
+  color: $accent;
   margin: 0 0 28px;
 }
 
@@ -140,13 +146,14 @@ body {
   gap: 10px;
   text-decoration: none;
   color: #888;
-  transition: color 0.3s, background-color 0.3s;
-  border-bottom: solid transparent 2px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  transition: all .3s ease;
 }
 
 .hp-link-item:hover {
   color: #fff;
-  background-color: #2e405b;
+  background-color: $accent;
 }
 
 .hp-link-icon {
@@ -186,6 +193,81 @@ body {
   letter-spacing: 3px;
 }
 
+/* === 文章列表 /posts === */
+.posts-expand .post {
+  border-bottom: none;
+  padding: 36px 0;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.posts-expand .post + .post::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #e8e8e8;
+  position: absolute;
+  top: 0;
+}
+
+.posts-expand .post-title {
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.posts-expand .post-title a {
+  color: $accent;
+  border-bottom: none;
+  transition: color .3s, background-color .3s;
+}
+
+.posts-expand .post-title a:hover {
+  color: #fff;
+  background-color: $accent;
+}
+
+.posts-expand .post-meta {
+  color: #999;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.posts-expand .post-meta time {
+  border-bottom: none;
+}
+
+.posts-expand .post-body {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: #666;
+  margin-top: 14px;
+}
+
+.post-button {
+  margin-top: 18px;
+}
+
+.post-button .btn {
+  border: 1px solid #ddd;
+  color: #999;
+  border-radius: 3px;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  padding: 7px 22px;
+  transition: all .3s ease;
+  background: transparent;
+}
+
+.post-button .btn:hover {
+  color: #fff;
+  background-color: $accent;
+  border-color: $accent;
+}
+
 /* === 文章正文排版 === */
 .post-body {
   font-size: 1.0625rem;
@@ -202,9 +284,9 @@ body {
   font-weight: 600;
   margin: 48px 0 18px;
   padding-left: 12px;
-  border-left: 2px solid #2e405b;
+  border-left: 2px solid $accent;
   letter-spacing: 1px;
-  color: #2e405b;
+  color: $accent;
 }
 
 .post-body h3 {
@@ -212,7 +294,7 @@ body {
   font-weight: 500;
   margin: 36px 0 14px;
   letter-spacing: 0.5px;
-  color: #2e405b;
+  color: $accent;
 }
 
 .post-body blockquote {
@@ -248,17 +330,17 @@ body {
 }
 
 .post-body a {
-  color: #2e405b;
+  color: $accent;
   text-decoration: none;
-  border-bottom: solid #2e405b 2px;
+  border-bottom: solid $accent 2px;
   padding-bottom: 1px;
-  transition: color 0.3s, background-color 0.3s;
+  transition: color .3s, background-color .3s;
 }
 
 .post-body a:hover {
   color: #fff;
-  background-color: #2e405b;
-  border-bottom: solid transparent 2px;
+  background-color: $accent;
+  border-bottom-color: transparent;
 }
 
 .post-body hr {
@@ -268,12 +350,17 @@ body {
   margin: 48px 0;
 }
 
+.post-body img {
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
 /* === 文章页标题 === */
 .post-header .post-title {
   font-weight: 600;
   letter-spacing: 2px;
   font-size: 1.5rem;
-  color: #2e405b;
+  color: $accent;
 }
 
 .post-meta {
@@ -287,122 +374,74 @@ body {
   border-radius: 3px;
   padding: 3px 12px;
   color: #888;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
   font-size: 0.8rem;
   letter-spacing: 1px;
 }
 
 .tag-cloud a:hover {
   color: #fff;
-  background: #2e405b;
-  border-color: #2e405b;
-}
-
-/* === 文章列表 /posts === */
-.posts-expand .post {
-  border-bottom: none;
-  padding: 36px 0;
-  margin-bottom: 4px;
-  position: relative;
-}
-
-.posts-expand .post + .post::before {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: #e8e8e8;
-  position: absolute;
-  top: 0;
-}
-
-.posts-expand .post-title {
-  font-weight: 600;
-  letter-spacing: 2px;
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-}
-
-.posts-expand .post-title a {
-  color: #2e405b;
-  border-bottom: none;
-  transition: color 0.3s, background-color 0.3s;
-}
-
-.posts-expand .post-title a:hover {
-  color: #fff;
-  background-color: #2e405b;
-}
-
-.posts-expand .post-meta {
-  color: #999;
-  font-size: 14px;
-  letter-spacing: 1px;
-  margin-bottom: 16px;
-}
-
-.posts-expand .post-meta time {
-  border-bottom: none;
-}
-
-.posts-expand .post-body {
-  font-size: 0.95rem;
-  line-height: 1.9;
-  color: #666;
-  margin-top: 14px;
-}
-
-.post-button {
-  margin-top: 18px;
-}
-
-.post-button .btn {
-  border: 1px solid #e0e0e0;
-  color: #999;
-  border-radius: 3px;
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  padding: 6px 20px;
-  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
-}
-
-.post-button .btn:hover {
-  color: #fff;
-  background-color: #2e405b;
-  border-color: #2e405b;
+  background: $accent;
+  border-color: $accent;
 }
 
 /* === 分页器 === */
 .pagination .page-number.current {
-  background: #2e405b;
+  background: $accent;
   border-radius: 0;
 }
 
-/* === TOC 目录 === */
+/* === 侧边栏 TOC === */
+.post-toc-wrap {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
 .post-toc {
   background: #fafaf9;
   border: 1px solid #eee;
   border-radius: 6px;
-  padding: 24px 28px;
+  padding: 20px 24px;
   margin-bottom: 36px;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 2;
+  max-height: none;
+  overflow: visible;
 }
 
-.post-toc .nav .nav-item .nav-link {
+.post-toc ol {
+  padding-left: 1.2em;
+  margin: 0;
+  list-style: decimal;
+}
+
+.post-toc ol ol {
+  list-style: lower-alpha;
+}
+
+.post-toc .nav-item {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}
+
+.post-toc .nav-link {
   color: #666;
-  border-bottom: none;
-  padding: 0;
+  border-bottom: none !important;
+  padding: 1px 0;
+  display: inline;
+  word-break: break-all;
 }
 
-.post-toc .nav .nav-item .nav-link:hover {
-  color: #2e405b;
-  background: transparent;
+.post-toc .nav-link:hover {
+  color: #fff;
+  background-color: $accent;
 }
 
-.post-toc .nav .active .nav-link {
-  color: #2e405b;
+.post-toc .active .nav-link {
+  color: $accent;
   font-weight: 600;
+  background: transparent !important;
 }
 
 /* === 侧边栏 === */
@@ -411,17 +450,34 @@ body {
 }
 
 .sidebar-nav .sidebar-nav-active {
-  color: #2e405b;
+  color: $accent;
 }
 
 .site-overview-title {
   font-weight: 600;
-  color: #2e405b;
+  color: $accent;
+}
+
+.links-of-author-item a {
+  border-radius: 3px;
+  padding: 4px 10px;
+  transition: all .25s;
+}
+
+.links-of-author-item a:hover {
+  color: #fff !important;
+  background: $accent !important;
 }
 
 /* === Gitalk === */
 .gt-container .gt-header-textarea {
   background: #fff !important;
+  border-radius: 4px !important;
+}
+
+/* === 图片圆角 === */
+img {
+  border-radius: 4px;
 }
 
 /* === 响应式 === */
@@ -432,7 +488,7 @@ body {
   }
 
   .hp-links {
-    gap: 28px;
+    gap: 20px;
   }
 
   .posts-expand .post {

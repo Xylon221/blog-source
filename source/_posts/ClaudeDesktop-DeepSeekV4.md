@@ -1,8 +1,8 @@
 ---
 title: Claude Desktop + DeepSeek V4 完整配置指南：免登录，无需订阅，5 分钟上手
-description: 访问 https://claude.ai/downloads，下载 Windows 版本（.exe 或 MSIX 安装包），按提示完成安装并启动应用。
-date: 2026-05-02
+date: 2026-05-03
 tags: []
+description: "访问 https://claude.ai/downloads，下载 Windows 版本（.exe 或 MSIX 安装包），按提示完成安装并启动应用。"
 ---
 # Claude Desktop + DeepSeek V4 完整配置指南：免登录，无需订阅，5 分钟上手
 
@@ -34,6 +34,17 @@ tags: []
 ### 第 1 步：安装 Claude Desktop
 
 访问 **https://claude.ai/downloads**，下载 Windows 版本（.exe 或 MSIX 安装包），按提示完成安装并启动应用。
+
+安装Claude-Desktop
+
+![Claude Desktop 模型配置界面](/images/posts/ClaudeDesktop-DeepSeekV4/setup-1.png)
+
+以管理员身份运行
+
+![upload successful](/images/pasted-2.png)
+
+![DeepSeek API 密钥设置完成](/images/posts/ClaudeDesktop-DeepSeekV4/setup-2.png)
+
 
 ### 第 2 步：开启开发者模式
 

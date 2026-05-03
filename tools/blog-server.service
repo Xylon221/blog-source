@@ -1,0 +1,16 @@
+[Unit]
+Description=Hexo Blog Server
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/workspace/blog-source
+Environment=NODE_ENV=production
+Environment=PATH=/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/usr/bin/node /home/ubuntu/workspace/blog-source/node_modules/hexo/bin/hexo server -p 4000
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
